@@ -15,6 +15,13 @@ Steps:
 
 _Please note: This is a preview version and is not ready for production!_
 
+## Todo
+- [ ] Create a proper RBAC role with limited access
+- [ ] Add more error handling
+- [ ] Add unit-tests
+- [ ] Add CI job to test and build the images
+- [ ] Remove kubectl dependencies
+
 ## Backup Keptn
 
 You can either run this tool as a single docker container from any host (kubeconfig file with a single context needed), or run it within your Kubernetes Cluster as an ad-hoc container as well as a cronjob.
