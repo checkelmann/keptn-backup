@@ -1,0 +1,13 @@
+FROM python:3.9.4-buster
+
+WORKDIR /app
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+
+ADD keptn-backup.py .
+
+# Install kubectl
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
+    chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
+
+CMD [ "python3", "keptn-backup.py"]
